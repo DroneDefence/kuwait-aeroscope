@@ -50,7 +50,7 @@ def send_request(url, data):
     except requests.exceptions.RequestException as e:
         logging.error(f"Error sending data to {url}: {e}")
 
-def send_detections(aeroscope_serial_number, drone_latitude, drone_longitude, baro_height, 
+def send_detections(aeroscope_serial_number, serial, drone_latitude, drone_longitude, baro_height, 
                     app_gps_latitude, app_gps_longitude, home_latitude, home_longitude, 
                     vx_north_speed, vz_rise_speed, uuid, model):
     output = {
@@ -63,15 +63,15 @@ def send_detections(aeroscope_serial_number, drone_latitude, drone_longitude, ba
             "accuracy": 1,
         },
         "metadata": [
-            {"key": "icao", "val": aeroscope_serial_number, "type": "primary"},
-            {"key": "registration", "val": aeroscope_serial_number, "type": "primary"},
+            {"key": "icao", "val": serial, "type": "primary"},
+            {"key": "registration", "val": serial, "type": "primary"},
             {"key": "home_lat", "val": str(home_latitude)},
             {"key": "home_lng", "val": str(home_longitude)},
             {"key": "speed", "val": str(vx_north_speed)},
             {"key": "vspeed", "val": str(vz_rise_speed)},
             {"key": "uuid", "val": uuid},
             {"key": "manufacturer", "val": "DJI"},
-            {"key": "model", "val": get_drone_model(model)},
+            {"key": "model", "val": get_drone_model(int(model))},
         ]
     }
     send_request(DETECTION_URL, output)

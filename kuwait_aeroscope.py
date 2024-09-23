@@ -72,7 +72,7 @@ class MyTCPHandler(socketserver.StreamRequestHandler):
             # Send the drone data
             if drone_latitude is not None and drone_longitude is not None:
                 send_detections(
-                    aeroscope_serial_number, drone_latitude, drone_longitude, baro_height, 
+                    aeroscope_serial_number, serial, drone_latitude, drone_longitude, baro_height, 
                     app_gps_latitude, app_gps_longitude, home_latitude, home_longitude, 
                     vx_north_speed, vz_rise_speed, uuid, model
                 )
