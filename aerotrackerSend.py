@@ -34,7 +34,7 @@ DRONE_MODELS = {
     73: "Mini 3 Pro", 75: "Avata", 76: "Inspire 3", 77: "Mavic 3 Enterprise E/T/M",
     78: "Flycart 30", 82: "AGRAS T25", 83: "AGRAS T50", 84: "Mavic 3 Pro",
     86: "Mavic 3 Classic", 87: "Mini 3", 88: "Mini 2 SE", 89: "M350 RTK",
-    90: "Air 3", 91: "Matrice 3D/3TD", 93: "Mini4 Pro", 95: "T60",
+    90: "Air 3", 91: "Matrice 3D/3TD", 93: "Mini 4 Pro", 95: "T60",
     96: "T25P", 240: "YUNEEC H480",
 }
 
